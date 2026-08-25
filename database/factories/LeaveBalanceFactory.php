@@ -10,15 +10,12 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class LeaveBalanceFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
     public function definition(): array
     {
         return [
-            //
+            'user_id'       => \App\Models\User::factory(),
+            'leave_type_id' => \App\Models\LeaveType::factory(),
+            'balance'       => $this->faker->numberBetween(5, 20),
         ];
     }
 }

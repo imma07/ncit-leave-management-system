@@ -10,15 +10,12 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class LeaveTypeFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
     public function definition(): array
     {
         return [
-            //
+            'name'          => $this->faker->word() . ' Leave',
+            'description'   => $this->faker->sentence(),
+            'eligible_days' => $this->faker->numberBetween(5, 30),
         ];
     }
 }
